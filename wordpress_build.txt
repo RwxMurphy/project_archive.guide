@@ -52,3 +52,40 @@ To check if the server can be accessed from the internet use a web browser to
 navigate to the public IP address of the server. The apache2 default page 
 should be visible. The server is using http not https so you will likely get a 
 warning from the browser when connecting to the server Ignore this for now.
+
+
+7. WordPress needs a database in order to function. We will be using mariadb 
+which is a fork of mysql.
+
+    Installing mariadb
+        $ sudo apt install mariadb-server
+
+
+    Configuring mariadb
+        log into the database with sudo
+            $ sudo mariadb
+
+
+    At the mariadb prompt
+        MariaDB[[none]]> SHOW DATABASES;
+        The above command will show a list of databases on the system. At this 
+        point we have not set up any databases but there are default databases 
+        on the system.
+
+
+    Creating the actual database that will be use by WordPress
+        MariaDB[[none]]> CREATE DATABASE wordpress_db DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci;
+        
+        A database called wordpress_db should now be created. To check run the 
+        SHOW DATABASES; command again. 
+        
+    We now need to create a user for wordpress that will manipulate the database.
+
+        MariaDB[[none]]> GRANT ALL PRIVILEGES ON wordpress_db.* TO wordpress_user@localhost IDENTIFIED BY 'create_a_password';
+
+
+    Update the priviligies we just granted.
+        MariaDB[[none]]> FLUSH PRIVILEGES;
+
+    Now exit the database.
+        MariaDB[[none]]> EXIT;
