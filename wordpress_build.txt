@@ -37,7 +37,7 @@ latest versions in the repos including the kernel.
 
 
 5. Reboot the server to make sure all the changes we have made will be applied
-    $ reboot
+    $ sudo reboot
 
 If you haven't switch to the non root user now is a good time to do so.
 
