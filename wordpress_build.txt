@@ -89,3 +89,24 @@ which is a fork of mysql.
 
     Now exit the database.
         MariaDB[[none]]> EXIT;
+
+
+8. Now add the default security policies to the database.
+    $ sudo mysql_secure_installation
+
+    **Answer the series of questions**
+    - Enter current password for root?
+    skipp for now by pressing enter.
+
+    - Switch to unix_socket authentication? n
+
+    - Change the root password? Y
+    this will allow you to set a password for the database root user.
+
+    - Remove anonymous users? Y
+
+    - Disallow root to login remotely? Y
+
+    - Remove test database and access to it? Y
+
+    - Reload privilege tables now" Y
