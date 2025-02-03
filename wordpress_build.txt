@@ -4,14 +4,14 @@
 
 
 2. After creating your VM using the IP Address ssh into the server.
+    In the text file give the VM a name use the domain name if you have one 
+    otherwise just give it an appropriate name.
+    You will also need to edit the /etc/hosts file as well.
 
     Set the hostname of the server
         $ sudo nano /etc/hostname
             wordpress
 
-    In the text file give server a name use the domain name if you have one 
-    otherwise just give it an appropriate name.
-    You will also need to edit the /etc/hosts file as well.
 
         $ sudo nano /etc/hosts
             127.0.1.1 wordpress
