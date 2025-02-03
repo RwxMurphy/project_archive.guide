@@ -18,10 +18,20 @@
 
 
 3. For secrity reasons it is a best practice to manage your server with a 
-    regular user account and not as root.
-        $ adduser murphy
-            -Follow prompts to add a new user
+regular user account and not as root.
+    $ adduser murphy
+        -Follow prompts to add a new user
 
     Give your user sudo privildges
         $ usermod -aG sudo murphy
+
+
+4. Update the server with the latests updates.Note that 'apt upgrade', 
+upgrades packages that are already installed and will not remove any packages
+on the system. 
+'apt dist-upgrade' will fully upgrade the system to the 
+latest versions in the repos including the kernel.
+  
+  Since this is a new install we will do a full upgrade.
+    $ sudo apt update && sudo apt dist-upgrade
     
