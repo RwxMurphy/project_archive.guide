@@ -136,3 +136,41 @@ changed to the wordpress user that will be serving wordpress.
     We now need to move the wordpress directory so it can be serverd by the 
     webserver.
         $ sudo mv wordpress /var/www/
+
+
+10. We now need to create a config file that will instruct apache on how it 
+should server wordpress.
+NOTE THAT COPYING AND PASTING INTO THE COMMANDLINE WINDOW CAN SOMETIME RESULT 
+IN ERROR READING THE FILE, HAND TYPE THE FILE OR UPLOAD A COPY.
+
+    $ sudo nano /etc/apache2/sites-available/wordpress.conf
+        
+        Add the following to the wordpress.conf file save and exit
+        -to save in the nano editor use CTRL + O 
+        -to exit use CTRL + X
+
+            <VirtualHost *:80>
+                DocumentRoot /var/www/wordpress
+                <Directory /var/www/wordpress>
+                    Options FollowSymLinks
+                    AllowOverride Limit Options FileInfo
+                    DirectoryIndex index.php
+                    Require all granted
+                </Directory>
+                <Directory /var/www/wordpress/wp-content>
+                    Options FollowSymLinks
+                    Require all granted
+                </Directory>
+            </VirtualHost>
+
+
+
+We now need to enable the config file we just created. You will be asked to 
+restart/reload apache for the changes to take effect however do not 
+restart/reload at this point wait to do one restart at the end of all your 
+changes instead to save time.
+    
+    $ sudo a2ensite wordpress.conf
+
+Now remove the default config file that came with the system
+    $ sudo a2dissite 000-default.conf
