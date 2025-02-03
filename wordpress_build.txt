@@ -110,3 +110,29 @@ which is a fork of mysql.
     - Remove test database and access to it? Y
 
     - Reload privilege tables now" Y
+
+
+
+9. Downloading and configuring WordPress
+    $ wget https://wordpress.org/latest.zip
+
+    Since the download is in a zip format we will need to uzip it.
+        $ sudo apt install unzip
+
+
+    unzip the latest.zip file
+        $ unzip latest.zip
+
+
+a wordpress directory will be extracted and you can now delete the latest.zip 
+file. The wordpress directory is owned by the logged-in user. This needs to 
+changed to the wordpress user that will be serving wordpress.
+
+    $ sudo chown -R www-data:www-data wordpress
+    Note that the ownership change must include all the files and directories 
+    so we will use the recurrisive option with uppercase 'R'
+
+
+    We now need to move the wordpress directory so it can be serverd by the 
+    webserver.
+        $ sudo mv wordpress /var/www/
