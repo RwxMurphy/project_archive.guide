@@ -234,14 +234,14 @@ first step is to install core snap package
     after the download and installation is complete move on to the next step
 
 Install certbot
-    $ sudo snap install --clasic certbot
+    $ sudo snap install --classic certbot
 
 Now create a symbolic link for certbot
     sudo ln -s /snap/bin/certbot /user/bin/certbot
 
 To move on to the next step you must ensure that you have a valid domain and 
-that the DNS server is pointing to your server ie the A record at you registar 
-must have the correct IP address to your server.
+that the DNS server is pointing to your server ie the 'A record' at your 
+registar must have the correct IP address to your server.
 
     $ sudo certbot --apache
     follow the prompts to complete
