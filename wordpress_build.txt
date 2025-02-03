@@ -1,0 +1,18 @@
+1. Choose a distro - ubuntu 24.04.1 LTS in this case
+    -If you are using cloud hosting a shared CPU plan w/ 1CPU - 1GB RAM and 25GB
+    instance is enough.
+
+
+2. After creating your VM using the IP Address ssh into the server.
+
+Set the hostname of the server
+    $ sudo nano /etc/hostname
+        wordpress
+
+In the text file give server a name use the domain name if you have one 
+otherwise just give it an appropriate name.
+You will also need to edit the /etc/hosts file as well.
+
+    $ sudo nano /etc/hosts
+        127.0.1.1 wordpress
+
