@@ -48,6 +48,9 @@ If you haven't switch to the non root user now is a good time to do so.
     To check the status of the apache server use the systemd utility.
         $ systemctl status apache2
 
+You will notice that there is an enabled fieled in the output. This is important
+because it means that the apache will automatically restart if the VM is 
+rebooted.
 To check if the server can be accessed from the internet use a web browser to 
 navigate to the public IP address of the server. The apache2 default page 
 should be visible. The server is using http not https so you will likely get a 
