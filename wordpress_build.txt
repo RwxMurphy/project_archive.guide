@@ -144,8 +144,6 @@ changed to the wordpress user that will be serving wordpress.
 
 10. We now need to create a config file that will instruct apache on how it 
 should server wordpress.
-NOTE THAT COPYING AND PASTING INTO THE COMMANDLINE WINDOW CAN SOMETIME RESULT 
-IN ERROR READING THE FILE, HAND TYPE THE FILE OR UPLOAD A COPY.
 
     $ sudo nano /etc/apache2/sites-available/wordpress.conf
         
@@ -170,15 +168,18 @@ IN ERROR READING THE FILE, HAND TYPE THE FILE OR UPLOAD A COPY.
 
 
 We now need to enable the config file we just created. You will be asked to 
-restart/reload apache for the changes to take effect however do not 
-restart/reload at this point wait to do one restart at the end of all your 
-changes instead to save time.
+restart/reload apache for the changes to take effect.
     
     $ sudo a2ensite wordpress.conf
 
 Now remove the default config file that came with the system
     $ sudo a2dissite 000-default.conf
 
+NOTE THAT COPYING AND PASTING INTO THE COMMANDLINE WINDOW CAN SOMETIMES RESULT 
+IN ERROR READING THE FILE. IF THE APACHE SERVER IS NOT RUNNING AFTER ADDING THE
+CONFIG FILE TRY ONE OR ALL OF THE FOLLOWING: 
+HAND TYPE THE FILE OR PASTE INTO A PLAIN TEXT EDITOR THEN COPY AND PASTE FROM 
+THERE.
 
 
 11. There are several packages that wordpress will need to work so we will 
