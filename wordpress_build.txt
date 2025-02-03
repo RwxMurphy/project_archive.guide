@@ -195,6 +195,9 @@ install those now.
 
     Check that it is active.
         $ systemctl status apache2
+    
+Note that a2enmod with no arguments will list all the packages instaled on the 
+system.
 
 
 12. Log-in to wordpress admin panel with the appropreate credentials
