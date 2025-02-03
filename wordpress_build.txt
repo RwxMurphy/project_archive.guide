@@ -174,3 +174,21 @@ changes instead to save time.
 
 Now remove the default config file that came with the system
     $ sudo a2dissite 000-default.conf
+
+
+
+11. There are several packages that wordpress will need to work so we will 
+install those now.
+    $ sudo apt install libapache2-mod-php php-curl php-gd php-intl php-mbstring php-mysql php-soap php-xml php-xmlrpc php-zip
+
+
+    Enable rewrite module
+        $ sudo a2enmod rewrite
+
+
+    Now restart apache
+        sudo systemctl restart apache2
+
+
+    Check that it is active.
+        $ systemctl status apache2
