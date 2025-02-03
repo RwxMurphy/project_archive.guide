@@ -192,3 +192,30 @@ install those now.
 
     Check that it is active.
         $ systemctl status apache2
+
+
+12. Log-in to wordpress admin panel with the appropreate credentials
+    NOTE: The login form can be filled out on the server directly if you are 
+    having issues with the GUI.
+
+    If this is your first time logging in to the wordpress admin
+    locate the wp-config-sample.php file in the /var/www/wordpress directory
+    edit the:
+        database name
+        user name
+        database password 
+        database host (should be localhost)
+        table prefix (should be wp_)
+
+    save the file as wp_config.php
+
+    Confirming your database credentials:
+        database name
+            MariaDB[[none]]> SHOW DATABASES;
+
+        database user and associated host
+            MariaDB[[none]]> SELECT User, Host FROM mysql.user;
+        
+        If you do not have access to your password you will need to reset it
+            MariaDB[[none]]> ALTER USER 'username'@'host' IDENTIFIED BY 'new_password';
+    
