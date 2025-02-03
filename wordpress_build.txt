@@ -237,7 +237,7 @@ Install certbot
     $ sudo snap install --classic certbot
 
 Now create a symbolic link for certbot
-    sudo ln -s /snap/bin/certbot /user/bin/certbot
+    sudo ln -s /snap/bin/certbot /usr/bin/certbot
 
 To move on to the next step you must ensure that you have a valid domain and 
 that the DNS server is pointing to your server ie the 'A record' at your 
